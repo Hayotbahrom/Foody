@@ -8,8 +8,20 @@
 
   <ItemGroup>
     <Compile Remove="Interfaces\Auths\**" />
+    <Compile Remove="Interfaces\Products\**" />
+    <Compile Remove="Interfaces\Restaurants\**" />
+    <Compile Remove="Interfaces\Saveds\**" />
+    <Compile Remove="Interfaces\Users\**" />
     <EmbeddedResource Remove="Interfaces\Auths\**" />
+    <EmbeddedResource Remove="Interfaces\Products\**" />
+    <EmbeddedResource Remove="Interfaces\Restaurants\**" />
+    <EmbeddedResource Remove="Interfaces\Saveds\**" />
+    <EmbeddedResource Remove="Interfaces\Users\**" />
     <None Remove="Interfaces\Auths\**" />
+    <None Remove="Interfaces\Products\**" />
+    <None Remove="Interfaces\Restaurants\**" />
+    <None Remove="Interfaces\Saveds\**" />
+    <None Remove="Interfaces\Users\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,15 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Foody.Domain\Foody.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interfaces\Users\" />
-    <Folder Include="Interfaces\Saveds\" />
-    <Folder Include="Interfaces\Restaurants\" />
-    <Folder Include="Interfaces\Products\" />
-    <Folder Include="Interfaces\Payments\" />
-    <Folder Include="Interfaces\Orders\" />
   </ItemGroup>
 
 </Project>
