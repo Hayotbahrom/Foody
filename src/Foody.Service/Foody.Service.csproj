@@ -6,23 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Interfaces\Auths\**" />
-    <Compile Remove="Interfaces\Products\**" />
-    <Compile Remove="Interfaces\Restaurants\**" />
-    <Compile Remove="Interfaces\Saveds\**" />
-    <Compile Remove="Interfaces\Users\**" />
-    <EmbeddedResource Remove="Interfaces\Auths\**" />
-    <EmbeddedResource Remove="Interfaces\Products\**" />
-    <EmbeddedResource Remove="Interfaces\Restaurants\**" />
-    <EmbeddedResource Remove="Interfaces\Saveds\**" />
-    <EmbeddedResource Remove="Interfaces\Users\**" />
-    <None Remove="Interfaces\Auths\**" />
-    <None Remove="Interfaces\Products\**" />
-    <None Remove="Interfaces\Restaurants\**" />
-    <None Remove="Interfaces\Saveds\**" />
-    <None Remove="Interfaces\Users\**" />
-  </ItemGroup>
+  
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
