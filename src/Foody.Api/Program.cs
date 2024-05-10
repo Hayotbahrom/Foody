@@ -1,4 +1,8 @@
 
+using Foody.Api.Extentions;
+using Foody.Data.DbContexts;
+using Microsoft.EntityFrameworkCore;
+
 namespace Foody
 {
     public class Program
@@ -10,9 +14,21 @@ namespace Foody
             // Add services to the container.
 
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddHttpContextAccessor();
+
+            // custom services
+            builder.Services.AddCustomService();
+
+            // DB Context
+            builder.Services.AddDbContext<AppDbContext>(options
+                => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+                );
+
+            builder.Services.AddAutoMapper(typeof(Program));
 
             var app = builder.Build();
 

@@ -11,7 +11,7 @@ namespace Foody.Service.Interfaces.Carts
     public interface ICartService
     {
         Task<CartForResultDto> AddAsync(CartForCreationDto dto);
-        Task<CartForResultDto> ModifyAsync(CartForUpdateDto dto);
+        Task<CartForResultDto> ModifyAsync(long id, CartForUpdateDto dto);
         Task<CartForResultDto> RetrieveById(long id);
         Task<IEnumerable<CartForResultDto>> GetAllAsync(PaginationParams @params);
         Task<bool> RemoveAsync(long id);
