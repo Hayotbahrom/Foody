@@ -9,6 +9,6 @@ namespace Foody.Service.DTOs.Addresses
     public class DistrictForCreationDto
     {
         public string Name { get; set; }
-        public long CountryId { get; set; }
+        public long RegionId { get; set; }
     }
 }

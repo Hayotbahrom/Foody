@@ -225,7 +225,7 @@ namespace Foody.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("CardIt")
+                    b.Property<long>("AddressId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -234,14 +234,17 @@ namespace Foody.Data.Migrations
                     b.Property<decimal>("DeliveryFee")
                         .HasColumnType("numeric");
 
-                    b.Property<long>("LocationId")
-                        .HasColumnType("bigint");
+                    b.Property<DateTime>("EndAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<decimal>("OrderFee")
                         .HasColumnType("numeric");
 
                     b.Property<long>("PaymentId")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("StartAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Status")
                         .HasColumnType("integer");
@@ -251,7 +254,7 @@ namespace Foody.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId");
+                    b.HasIndex("AddressId");
 
                     b.HasIndex("PaymentId");
 
@@ -265,9 +268,6 @@ namespace Foody.Data.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<long>("CartId")
-                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -632,9 +632,9 @@ namespace Foody.Data.Migrations
 
             modelBuilder.Entity("Foody.Domain.Entities.Orders.Order", b =>
                 {
-                    b.HasOne("Foody.Domain.Entities.Addresses.Address", "Location")
+                    b.HasOne("Foody.Domain.Entities.Addresses.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("LocationId")
+                        .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -644,7 +644,7 @@ namespace Foody.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Location");
+                    b.Navigation("Address");
 
                     b.Navigation("Payment");
                 });

@@ -12,7 +12,7 @@ namespace Foody.Service.Interfaces.Restaurants
     public interface IRestaurantService
     {
         Task<RestaurantForResultDto> AddAsync(RestaurantForCreationDto dto);
-        Task<RestaurantForResultDto> ModifyAsync(RestaurantForUpdateDto dto);
+        Task<RestaurantForResultDto> ModifyAsync(long id, RestaurantForUpdateDto dto);
         Task<RestaurantForResultDto> RetrieveById(long id);
         Task<IEnumerable<RestaurantForResultDto>> GetAllAsync(PaginationParams @params);
         Task<bool> RemoveAsync(long id);

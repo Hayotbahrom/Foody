@@ -12,7 +12,7 @@ namespace Foody.Service.Interfaces.Orders
     public interface IOrderService
     {
         Task<OrderForResultDto> AddAsync(OrderForCreationDto dto);
-        Task<OrderForResultDto> ModifyAsync(OrderForCreationDto dto);
+        Task<OrderForResultDto> ModifyAsync(long id, OrderForCreationDto dto);
         Task<OrderForResultDto> RetrieveById(long id);
         Task<IEnumerable<OrderForResultDto>> GetAllAsync(PaginationParams @params);
         Task<bool> RemoveAsync(long id);

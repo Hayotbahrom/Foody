@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Foody.Service.Interfaces.Restaurants
 {
-    public interface IRestaurantProducts
+    public interface IRestaurantProductService
     {
         Task<RestaurantProductForResultDto> AddAsync(RestaurantProductForCreationDto dto);
-        Task<RestaurantProductForResultDto> ModifyAsync(RestaurantProductForUpdateDto dto);
+        Task<RestaurantProductForResultDto> ModifyAsync(long id, RestaurantProductForUpdateDto dto);
         Task<RestaurantProductForResultDto> RetrieveById(long id);
         Task<IEnumerable<RestaurantProductForResultDto>> GetAllAsync(PaginationParams @params);
         Task<bool> RemoveAsync(long id);

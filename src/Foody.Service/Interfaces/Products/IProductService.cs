@@ -12,7 +12,7 @@ namespace Foody.Service.Interfaces.Products
     public interface IProductService
     {
         Task<ProductForResultDto> AddAsync(ProductForCreationDto dto);
-        Task<ProductForResultDto> ModifyAsync(ProductForUpdateDto dto);
+        Task<ProductForResultDto> ModifyAsync(long id, ProductForUpdateDto dto);
         Task<ProductForResultDto> RetrieveById(long id);
         Task<IEnumerable<ProductForResultDto>> GetAllAsync(PaginationParams @params);
         Task<bool> RemoveAsync(long id);
